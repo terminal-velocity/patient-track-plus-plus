@@ -9,19 +9,20 @@
 </head>
 
 <body>
-<div class="row">
-<div class="large-12 columns">
-<h1>Patient Tracker</h1>
-</div>
+  <div class="row">
+    <div class="large-6 columns">
+      <h1>Patient Tracker</h1>
+    </div>
+    <div class="large-6 columns">
+      <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
+    </div>
+  </div>
 
-<ul class="menu" style="list-style-type: none;">
-  <li><a href="#">About</a></li>
-  <li><a href="#">Admin</a></li>
-</ul>
-
-<div id='editor_holder'></div>
-<hr>
-</div>
+  <div class="row">
+    <div class="large-12 columns">
+      <div id='editor_holder'></div>
+    </div>
+  </div>
 
 <div class="row">
 <form id="secretForm" method="POST" style="display:none">
@@ -30,10 +31,9 @@
 </form>
 </div>
 <div class="row">
-<div class="large-3 columns">
-</div>
-<div class="large-9 columns right">
-<button id='submit' style="text-align: right;">Save changes</button>
+<div class="large-12 columns right">
+<button id='submit' class="button" style="text-align: right;">Save changes</button>
+<a class="button secondary" href="/clients/<%= doc._id %>">Back to patient</a>
 </div>
 </div>
 
@@ -46,6 +46,7 @@ JSONEditor.defaults.options.disable_edit_json = true;
 JSONEditor.defaults.options.disable_collapse = true;
 JSONEditor.defaults.options.disable_properties = true;
 JSONEditor.defaults.options.ajax = true;
+JSONEditor.defaults.options.required_by_default = true;
 // Initialize the editor with a JSON schema
 var editor;
 jx.load('/form.json',function(data){

@@ -1,5 +1,6 @@
 {
   "type": "object",
+  "title": "Edit client",
   "properties": {
     "first_name": {
       "title": "First name!",
@@ -11,10 +12,6 @@
     "NHS": {
       "title": "NHS No.",
       "type": "number"
-    },
-    "last_name": {
-      "type": "string"
     }
   }
 }
-
