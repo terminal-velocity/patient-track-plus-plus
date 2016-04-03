@@ -2,10 +2,17 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+		<!-- Foundation CSS framework (Bootstrap and jQueryUI also supported) -->
+		<link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
+		<!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
+		<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+		<script src="/javascripts/jsoneditor.js"></script>
+		<script src="/javascripts/jx.js"></script>
   </head>
   <body>
+  <div class="row">
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+  </div>
   </body>
 </html>

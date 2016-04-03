@@ -2,9 +2,15 @@
 <html>
   <head>
     <title>:)</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+		<!-- Foundation CSS framework (Bootstrap and jQueryUI also supported) -->
+		<link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
+		<!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
+		<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+		<script src="/javascripts/jsoneditor.js"></script>
+		<script src="/javascripts/jx.js"></script>
   </head>
   <body>
+  <div class="row">
     <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
     <h1>Saves</h1>
     <ul>
@@ -12,5 +18,6 @@
       <li><a href="/clients/<%= doc._id %>">~</a> <span style="font-family: monospace"><%= doc._id %></span> <span style="font-family: monospace"><%= doc.client %></span> <%= doc.datecreated %> <%= doc.data %></li>
     <% }) %>
     </ul>
+    </div>
   </body>
 </html>
