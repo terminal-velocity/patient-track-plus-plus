@@ -10,12 +10,16 @@
 		<script src="/javascripts/jx.js"></script>
   </head>
   <body>
+  <div class="large-12 columns">
+	<h1>Patient Tracker</h1>
+	</div>
+
   <div class="row">
     <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
     <h1>Saves</h1>
     <ul>
     <% docs.forEach(function (doc) { %>
-      <li><a href="/clients/<%= doc._id %>">~</a> <span style="font-family: monospace"><%= doc._id %></span> <span style="font-family: monospace"><%= doc.client %></span> <%= doc.datecreated %> <%= doc.data %></li>
+      <li><a href="/clients/<%= doc._id %>">~</a> <span><%= doc._id %></span> <span><%= doc.client %></span> <%= doc.datecreated %> <%= doc.data %></li>
     <% }) %>
     </ul>
     </div>
