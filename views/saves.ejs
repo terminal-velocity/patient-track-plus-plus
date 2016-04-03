@@ -10,18 +10,23 @@
 		<script src="/javascripts/jx.js"></script>
   </head>
   <body>
-  <div class="large-12 columns">
-	<h1>Patient Tracker</h1>
+  	<div class="large-12 columns">
+		<h1>Patient Tracker</h1>
 	</div>
 
-  <div class="row">
-    <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
-    <h1>Saves</h1>
-    <ul>
-    <% docs.forEach(function (doc) { %>
-      <li><a href="/clients/<%= doc._id %>">~</a> <span><%= doc._id %></span> <span><%= doc.client %></span> <%= doc.datecreated %> <%= doc.data %></li>
-    <% }) %>
-    </ul>
+	<ul class="menu" style="list-style-type: none;">
+  		<li><a href="#">About</a></li>
+  		<li><a href="#">Admin</a></li>
+	</ul>
+
+  	<div class="row">
+    	<a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
+    	<h1>Saves</h1>
+    	<ul>
+    		<% docs.forEach(function (doc) { %>
+      		<li><a href="/clients/<%= doc._id %>">~</a> <span><%= doc._id %></span> <span><%= doc.client %></span> <%= doc.datecreated %> <%= doc.data %></li>
+    		<% }) %>
+    	</ul>
     </div>
   </body>
 </html>
