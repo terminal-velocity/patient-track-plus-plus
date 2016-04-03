@@ -7,6 +7,14 @@
     },
     "last_name": {
       "type": "string"
+    },
+    "NHS": {
+      "title": "NHS No.",
+      "type": "number"
+    },
+    "last_name": {
+      "type": "string"
     }
   }
 }
+

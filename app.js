@@ -98,7 +98,7 @@ app.get('/clients/:id', function(req, res){
     var clients = db.collection('clients');
     clients.findOne({ _id: mongodb.ObjectId(req.params.id) },function(err, doc) {
       console.log(doc);
-      if(doc._id){
+      if(doc&&doc._id){
         res.render('client', {doc: doc});
       }else {
         res.send('404. Page not found.');

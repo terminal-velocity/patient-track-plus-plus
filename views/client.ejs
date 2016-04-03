@@ -10,18 +10,19 @@
 		<script src="/javascripts/jx.js"></script>
   </head>
   <body>
-  	<div class="large-12 columns">
-		<h1>Patient Tracker</h1>
-	</div>
-	<div class="row">
-		<ul class="menu" style="list-style-type: none;">
-  			<li><a href="#">About</a></li>
-  			<li><a href="#">Admin</a></li>
-		</ul>
-    	<a href="/clients">&larr; Back</a>
-    	<h1>Clients</h1>
-    	<h5><%= doc.name %></h5>
-    	<a href="/clients/<%= doc._id %>/save">Save</a>
+    <div class="row">
+    	<div class="large-6 columns">
+  		  <h1>Patient Tracker</h1>
+  	  </div>
+      <div class="large-6 columns">
+        <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
+      </div>
+    </div>
+	  <div class="row">
+      <div class="large-12 columns">
+      	<h2>Clients - <%= doc.name %></h2>
+        <br>
+      	<a href="/clients/<%= doc._id %>/save">Edit patient data</a>.
   	</div>
   </body>
 </html>

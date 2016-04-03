@@ -10,25 +10,37 @@
       <script src="/javascripts/jx.js"></script>
   </head>
   <body>
-    <div class="large-12 columns">
-    <h1>Patient Tracker</h1>
+    <div class="row">
+    	<div class="large-6 columns">
+  		  <h1>Patient Tracker</h1>
+  	  </div>
+      <div class="large-6 columns">
+        <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
+      </div>
     </div>
-
-    <ul class="menu" style="list-style-type: none;">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Admin</a></li>
-    </ul>
-    <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
-    <h1>Clients</h1>
-    <form method="POST" action="/clients/new">
-      <input type="text" name="name" placeholder="Enter new client name.." />
-      <input type="submit" name="submit" value="New User" />
-    </form>
-    <ul>
-    <% docs.forEach(function (doc) { %>
-      <li><a href="/clients/<%= doc._id %>"><%= doc.name %></a></li>
-    <% }) %>
-    </ul>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Clients</h2>
+      </div>
+    </div>
+    <div class="row">
+      <form method="POST" action="/clients/new">
+      <div class="large-10 columns">
+          <input type="text" name="name" placeholder="Enter new client name.." />
+      </div>
+      <div class="large-2 columns">
+        <input class="button tiny" style="align-self:center;vertical-align:middle;" type="submit" name="submit" value="New User" />
+      </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <ul>
+        <% docs.forEach(function (doc) { %>
+          <li><a href="/clients/<%= doc._id %>"><%= doc.name %></a></li>
+        <% }) %>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

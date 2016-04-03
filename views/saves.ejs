@@ -10,23 +10,39 @@
 		<script src="/javascripts/jx.js"></script>
   </head>
   <body>
-  	<div class="large-12 columns">
-		<h1>Patient Tracker</h1>
-	</div>
-
-	<ul class="menu" style="list-style-type: none;">
-  		<li><a href="#">About</a></li>
-  		<li><a href="#">Admin</a></li>
-	</ul>
+    <div class="row">
+    	<div class="large-6 columns">
+  		  <h1>Patient Tracker</h1>
+  	  </div>
+      <div class="large-6 columns">
+        <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
+      </div>
+    </div>
 
   	<div class="row">
-    	<a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
-    	<h1>Saves</h1>
-    	<ul>
-    		<% docs.forEach(function (doc) { %>
-      		<li><a href="/clients/<%= doc._id %>">~</a> <span><%= doc._id %></span> <span><%= doc.client %></span> <%= doc.datecreated %> <%= doc.data %></li>
-    		<% }) %>
-    	</ul>
+      <div class="large-12 columns">
+      	<h1>Saves</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Save Id</th>
+              <th>Client Id</th>
+              <th>Date</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% docs.forEach(function (doc) { %>
+            <tr>
+              <td style="font-size: xx-small; font-family: monospace;"><%= doc._id %></td>
+              <td style="font-size: xx-small; font-family: monospace;"><a href="/clients/<%= doc.client %>"><%= doc.client %></a></td>
+              <td style="font-size: xx-small; font-family: monospace;"><%= doc.datecreated %></td>
+              <td style="font-size: xx-small; font-family: monospace;"><%= doc.data %></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
