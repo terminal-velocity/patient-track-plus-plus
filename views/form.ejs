@@ -1,0 +1,70 @@
+<html>
+<head>
+<!-- Foundation CSS framework (Bootstrap and jQueryUI also supported) -->
+<link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
+<!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
+<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+<script src="/javascripts/jsoneditor.js"></script>
+<script src="/javascripts/jx.js"></script>
+</head>
+
+<body>
+<div class="row">
+<div class="large-12 columns">
+<h1>Patient Tracker</h1>
+</div>
+
+<ul class="menu" style="list-style-type: none;">
+  <li><a href="#">About</a></li>
+  <li><a href="#">Admin</a></li>
+</ul>
+
+<div id='editor_holder'></div>
+<hr>
+</div>
+
+<div class="row">
+<form id="secretForm" method="POST" style="display:none">
+  <textarea id="textarea" name="data"></textarea>
+  <input type="button" onclick="myFunction()" value="Submit">
+</form>
+</div>
+<div class="row">
+<div class="large-3 columns">
+<h1><img src="http://placehold.it/400x100&text=Edit"></h1>
+</div>
+<div class="large-9 columns right">
+<button id='submit' style="text-align: right;">Save changes</button>
+</div>
+</div>
+
+
+<script>
+// Set the default CSS theme and icon library globally
+JSONEditor.defaults.theme = 'foundation5';
+JSONEditor.defaults.iconlib = 'fontawesome4';
+JSONEditor.defaults.options.disable_edit_json = true;
+JSONEditor.defaults.options.disable_collapse = true;
+JSONEditor.defaults.options.disable_properties = true;
+JSONEditor.defaults.options.ajax = true;
+// Initialize the editor with a JSON schema
+var editor;
+jx.load('/form.json',function(data){
+	//alert(data); // Do what you want with the 'data' variable.
+  editor = new JSONEditor(document.getElementById('editor_holder'),{
+    <% if(doc&&doc.data){ %>startval: <%- doc.data -%>,  <% } %>
+    schema: data
+  });
+}, 'json');
+
+
+// Hook up the submit button to log to the console
+document.getElementById('submit').addEventListener('click',function() {
+  // Get the value from the editor
+  console.log(editor.getValue());
+  console.log(JSON.stringify(editor.getValue()));
+  document.getElementById("textarea").value = JSON.stringify(editor.getValue());
+  document.getElementById("secretForm").submit();
+
+});
+</script>

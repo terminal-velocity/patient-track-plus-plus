@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>:)</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
+    <h1>Saves</h1>
+    <ul>
+    <% docs.forEach(function (doc) { %>
+      <li><a href="/clients/<%= doc._id %>">~</a> <span style="font-family: monospace"><%= doc._id %></span> <span style="font-family: monospace"><%= doc.client %></span> <%= doc.datecreated %> <%= doc.data %></li>
+    <% }) %>
+    </ul>
+  </body>
+</html>
