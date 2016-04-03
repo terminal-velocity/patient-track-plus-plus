@@ -8,20 +8,17 @@
 		<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
 		<script src="/javascripts/jsoneditor.js"></script>
 		<script src="/javascripts/jx.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-  	<div class="large-12 columns">
-	<h1>Patient Tracker</h1>
-	</div>
-
-	<ul class="menu" style="list-style-type: none;">
-  		<li><a href="#">About</a></li>
-  		<li><a href="#">Admin</a></li>
-	</ul>
-	<div class="row">
-    
-    <h2><%= title %></h2>
-    <p>Welcome to <%= title %></p>
+    <div class="row">
+    	<div class="large-6 columns">
+  		  <h1>Patient Tracker</h1>
+  	  </div>
+      <div class="large-6 columns">
+        <a href="/saves">Saves</a> &bull; <a href="/clients">Clients</a>
+      </div>
+    </div>
   </div>
   </body>
 </html>
